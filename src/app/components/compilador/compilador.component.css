@@ -1,0 +1,257 @@
+.contenedor{
+  background-color: aqua;
+}
+
+.textarea {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  position: absolute;
+  width: 600px;
+  height: 300px;
+  border-radius: 2.5%;
+  left: 240px;
+  top: 168px;
+  /* identical to box height, or 48px */
+  /* Dark blue/dark-blue-300 */
+  color: #0A3871;
+  background-color: #ffffff;
+  /*  Remove Resize Handler  */
+  resize: none;
+  border: none;
+}
+
+textarea::placeholder {
+  position: absolute;
+  width: 577px;
+  height: 48px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 150%;
+  /* identical to box height, or 48px */
+  /* Dark blue/dark-blue-300 */
+  color: #0A3871;
+}
+
+.frame1 {
+  /* Frame 1 */
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+
+  margin-top: 1%;
+  position: absolute;
+  width: 229px;
+  height: 176px;
+  left: 240px;
+  top: 693px;
+}
+
+.framei {
+  /* Vector */
+  width: 16px;
+  height: 16px;
+  /* Gray/gray-400 */
+  background: #495057;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.espacio {
+  /* bi:exclamation-circle-fill */
+  width: 16px;
+  height: 16px;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.textoFrame1 {
+  /* Solo letras minúsculas y sin acentos */
+  width: 205px;
+  height: 18px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  /* identical to box height, or 18px */
+  /* Gray/gray-400 */
+  color: #495057;
+  opacity: 0.8;
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.logo {
+  /* Logo */
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 40px;
+  position: absolute;
+  width: 120px;
+  height: 48px;
+  left: 40px;
+  top: 40px;
+}
+
+.logoV {
+  /* Logo */
+  width: 120px;
+  height: 48px;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.vector {
+  /* Vector */
+  position: absolute;
+  left: 36.67%;
+  right: 37.43%;
+  top: 0%;
+  bottom: 0%;
+  /* Dark blue/dark-blue-300 */
+  background: #0A3871;
+}
+
+.circle {
+  /* bi:exclamation-circle-fill */
+  width: 16px;
+  height: 16px;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.frameInfo {
+  /* Frame */
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 10px;
+
+  position: absolute;
+  height: 16px;
+  left: 0%;
+  right: 0%;
+  top: calc(50% - 16px/2);
+
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+
+.frame3 {
+  /* Frame 3 */
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
+
+  position: absolute;
+  width: 680px;
+  height: 67px;
+  left: 240px;
+  top: 885px;
+}
+
+.buttonEncriptar {
+  /* Button */
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 8px;
+  width: 328px;
+  height: 67px;
+  /* Dark blue/dark-blue-300 */
+  background: #0A3871;
+  border-radius: 30px;
+  border: none;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.buttonDesencriptar {
+  /* Button */
+  box-sizing: border-box;
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 8px;
+  width: 328px;
+  height: 67px;
+  /* Light gray */
+  background: #D8DFE8;
+  /* Dark blue/dark-blue-300 */
+  border: 1px solid #0A3871;
+  border-radius: 30px;
+  border: none;
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.textoEncriptar {
+  /* Button */
+  width: 280px;
+  height: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  /* White */
+  color: #FFFFFF;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+}
+
+.textoDesencriptar {
+  /* Button */
+  width: 280px;
+  height: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  /* Dark blue/dark-blue-300 */
+  color: #0A3871;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+}

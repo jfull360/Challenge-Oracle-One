@@ -1,0 +1,28 @@
+<div class="contenedor">
+  <!-- #E5E5E5 -->
+  <div class="logo">
+    <div class="logoV">
+      <img class="logoV" src="../../../assets/logo.png" />
+    </div>
+  </div>
+
+  <div [formGroup]="form">
+    <textarea formControlName="texto" class="textarea" placeholder="Ingrese el texto aqui"></textarea>
+  </div>
+
+  <div class="frame1">
+    <div class="espacio">
+      <img class="espacio" src="../../../assets/bi_exclamation-circle-fill.png" />
+    </div>
+    <p class="textoFrame1">Solo letras minúsculas y sin acentos</p>
+  </div>
+
+  <div class="frame3">
+    <button class="buttonEncriptar" (click)="encriptar()">
+      <div class="textoEncriptar">Encriptar</div>
+    </button>
+    <button class="buttonDesencriptar">
+      <div class="textoDesencriptar">Desencriptar</div>
+    </button>
+  </div>
+</div>
