@@ -36,6 +36,10 @@ textarea::placeholder {
   color: #0A3871;
 }
 
+textarea.textarea{
+  background-color: #95bff2;
+}
+
 .frame1 {
   /* Frame 1 */
   /* Auto layout */
@@ -111,10 +115,12 @@ textarea::placeholder {
 
 .logoV {
   /* Logo */
-  width: 120px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   /* Inside auto layout */
-  flex: none;
+  display: flex;
+  align-items: first baseline;
+  justify-content: first baseline;
   order: 0;
   flex-grow: 0;
 }
