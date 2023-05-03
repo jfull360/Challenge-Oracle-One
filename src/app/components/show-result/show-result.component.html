@@ -1,0 +1,16 @@
+<div class="formaTextArea">
+
+    <div *ngIf="resultado === ''; else area">
+        <img class="muñeco" src="../../../assets/Muñeco.png" />
+        <div class="frame5">
+            <p class="emptyMessage">Ningún mensaje fue encontrado</p>
+            <p class="emptyMessage2">Ingresa el texto que desees encriptar o desencriptar.</p>
+        </div>
+
+    </div>
+
+    <ng-template #area>
+        <textarea class="formaTextArea" [(ngModel)]="resultado"></textarea>
+    </ng-template>
+
+</div>

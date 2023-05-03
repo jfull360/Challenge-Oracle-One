@@ -12,6 +12,9 @@ import {
   ConfirmEventType,
 } from 'primeng/api';
 import { removerAcentos } from 'src/app/utils/quitarAcentos';
+import { ShowResultComponent } from '../show-result/show-result.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 export type caracteresConvertidor = {
   [key in string]: string;
@@ -20,7 +23,7 @@ export type caracteresConvertidor = {
   selector: 'compilador',
   templateUrl: './compilador.component.html',
   styleUrls: ['./compilador.component.css'],
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, ShowResultComponent, CommonModule, BrowserModule],
   providers: [ConfirmationService, MessageService],
   standalone: true,
 })
@@ -34,6 +37,7 @@ export class Compiladorcomponent implements OnInit {
   form: UntypedFormGroup = this.fb.group({
     texto: ['', [Validators.required, Validators.pattern('/^[0-9A-Za-z]$/')]],
   });
+  resultado:string='';
   converciones: caracteresConvertidor = {
     e: 'enter',
     i: 'imes',
@@ -42,6 +46,7 @@ export class Compiladorcomponent implements OnInit {
     u: 'ufat',
   };
   reglas: RegExp = /^[0-9A-Za-z]$/;
+
 
   ngOnInit(): void {}
 
@@ -77,5 +82,6 @@ export class Compiladorcomponent implements OnInit {
     });
 
     console.log(arrayEncriptado);
+    this.resultado=arrayEncriptado;
   }
 }
