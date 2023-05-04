@@ -1,11 +1,11 @@
 .formaTextArea {
     /* Rectangle 1 */
-    position: absolute;
+    /* position: absolute; */
     width: 400px;
-    height: 944px;
+    height: 700px;
     left: 1000px;
-    top: 40px;
-
+    bottom: 3%;
+    position: absolute;
     /* White */
 
     background: #FFFFFF;
@@ -15,82 +15,102 @@
     border-radius: 32px;
 }
 
-.muñeco{
+.textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    position: relative;
+    width: 400px;
+    height: 300px;
+    border-radius: 2.5%;
+    /* left: 240px; */
+    top: 150px;
+    /* identical to box height, or 48px */
+    /* Dark blue/dark-blue-300 */
+    color: #0A3871;
+    background-color: #ffffff;
+    /*  Remove Resize Handler  */
+    resize: none;
+    border: none;
+}
+
+.muñeco {
     /* Muñeco */
-position: absolute;
-width: 336px;
-height: 304px;
-left: 1032px;
-top: 283px;
+    position: relative;
+    width: 336px;
+    height: 304px;
+    left: 10%;
+    top: 150px;
 }
 
-.frame5{
+.frame5 {
     /* Frame 5 */
-/* Auto layout */
+    /* Auto layout */
 
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 0px;
-gap: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
 
-position: absolute;
-width: 336px;
-height: 122px;
-left: 1032px;
-top: 619px;
+    position: relative;
+    width: 336px;
+    height: 122px;
+    left: 10%;
+    top: 160px;
 }
 
-.emptyMessage{
+.emptyMessage {
     /* Ningún mensaje fue encontrado */
-width: 336px;
-height: 58px;
+    width: 336px;
+    height: 58px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-font-size: 24px;
-line-height: 120%;
-/* or 29px */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    /* or 29px */
 
-text-align: center;
+    text-align: center;
 
-/* Gray/gray-500 */
+    /* Gray/gray-500 */
 
-color: #343A40;
+    color: #343A40;
 
 
-/* Inside auto layout */
+    /* Inside auto layout */
 
-flex: none;
-order: 0;
-align-self: stretch;
-flex-grow: 0;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
 }
 
-.emptyMessage2{
+.emptyMessage2 {
     /* Ingresa el texto que desees encriptar o desencriptar. */
-width: 336px;
-height: 48px;
+    width: 336px;
+    height: 48px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 150%;
-/* or 24px */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    /* or 24px */
 
-text-align: center;
+    text-align: center;
 
-/* Gray/gray-400 */
+    /* Gray/gray-400 */
 
-color: #495057;
+    color: #495057;
 
 
-/* Inside auto layout */
+    /* Inside auto layout */
 
-flex: none;
-order: 1;
-align-self: stretch;
-flex-grow: 0;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
 }
