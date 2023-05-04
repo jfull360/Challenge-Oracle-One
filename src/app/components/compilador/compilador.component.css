@@ -1,5 +1,8 @@
-.contenedor{
-  background-color: aqua;
+.contenedor {
+  background: #E5E5E5;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .textarea {
@@ -7,7 +10,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
-  position: absolute;
+  position: relative;
   width: 600px;
   height: 300px;
   border-radius: 2.5%;
@@ -23,7 +26,7 @@
 }
 
 textarea::placeholder {
-  position: absolute;
+  /* position: absolute; */
   width: 577px;
   height: 48px;
   font-family: Arial, Helvetica, sans-serif;
@@ -36,7 +39,7 @@ textarea::placeholder {
   color: #0A3871;
 }
 
-textarea.textarea{
+textarea.textarea {
   background-color: #95bff2;
 }
 
@@ -50,11 +53,11 @@ textarea.textarea{
   gap: 8px;
 
   margin-top: 1%;
-  position: absolute;
+  position: relative;
   width: 229px;
   height: 176px;
   left: 240px;
-  top: 693px;
+  top: 80px;
 }
 
 .framei {
@@ -127,7 +130,7 @@ textarea.textarea{
 
 .vector {
   /* Vector */
-  position: absolute;
+  /* position: absolute; */
   left: 36.67%;
   right: 37.43%;
   top: 0%;
@@ -155,7 +158,7 @@ textarea.textarea{
   padding: 0px;
   gap: 10px;
 
-  position: absolute;
+  /* position: absolute; */
   height: 16px;
   left: 0%;
   right: 0%;
@@ -168,18 +171,16 @@ textarea.textarea{
 .frame3 {
   /* Frame 3 */
   /* Auto layout */
-
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   padding: 0px;
   gap: 24px;
-
-  position: absolute;
+  position: relative;
   width: 680px;
   height: 67px;
   left: 240px;
-  top: 885px;
+  top: 10%;
 }
 
 .buttonEncriptar {

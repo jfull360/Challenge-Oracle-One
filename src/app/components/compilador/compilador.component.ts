@@ -53,9 +53,8 @@ export class Compiladorcomponent implements OnInit {
   validaciones() {
     const regex = new RegExp("/^([0-9A-Za-z])\w+/g");
     console.log(regex.test(this.form.get('texto')?.value));
-
     
-    if (!regex.test(this.form.get('texto')?.value))
+    /* if (!regex.test(this.form.get('texto')?.value))
       return (
         console.log('first'),
         this.messageService.add({
@@ -63,7 +62,7 @@ export class Compiladorcomponent implements OnInit {
           summary: 'Rejected',
           detail: 'You have rejected',
         })
-      );
+      ); */
     //Debe funcionar solo con letras minúsculas
     let minuscula = removerAcentos(this.form.get('texto')?.value.toLowerCase());
     this.encriptar(minuscula);
