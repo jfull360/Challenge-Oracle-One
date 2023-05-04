@@ -3,14 +3,12 @@
     /* position: absolute; */
     width: 400px;
     height: 700px;
-    left: 1000px;
-    bottom: 3%;
+    left: 70%;
+    bottom: 15%;
     position: absolute;
     /* White */
-
     background: #FFFFFF;
     /* shadow */
-
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
     border-radius: 32px;
 }
@@ -21,10 +19,10 @@
     font-weight: 400;
     font-size: 32px;
     position: relative;
-    width: 400px;
+    width: 350px;
     height: 300px;
     border-radius: 2.5%;
-    /* left: 240px; */
+    left: 6%;
     top: 150px;
     /* identical to box height, or 48px */
     /* Dark blue/dark-blue-300 */
@@ -66,7 +64,7 @@
     width: 336px;
     height: 58px;
 
-    font-family: 'Inter';
+    font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
@@ -93,13 +91,15 @@
     width: 336px;
     height: 48px;
 
-    font-family: 'Inter';
+    font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
     /* or 24px */
-
+    display: flex;
+    position: relative;
+    bottom: 35%;
     text-align: center;
 
     /* Gray/gray-400 */
@@ -113,4 +113,59 @@
     order: 1;
     align-self: stretch;
     flex-grow: 0;
+}
+
+.frame6 {
+    /* Frame 3 */
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    position: relative;
+    width: 680px;
+    height: 67px;
+    left: 10%;
+    top: 30%;
+}
+
+.buttonClean {
+    /* Button */
+    box-sizing: border-box;
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 8px;
+    width: 328px;
+    height: 67px;
+    /* Light gray */
+    /* background: #D8DFE8; */
+    /* Dark blue/dark-blue-300 */
+    border: 1px solid #0A3871;
+    border-radius: 30px;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.textClean {
+    /* Button */
+    width: 280px;
+    height: 19px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    /* White */
+    color: #000000;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 1;
 }
