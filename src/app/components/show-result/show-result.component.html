@@ -1,5 +1,4 @@
 <div class="formaTextArea">
-
     <div *ngIf="resultado === ''; else area">
         <img class="muñeco" src="../../../assets/Muñeco.png" />
         <div class="frame5">
@@ -10,5 +9,13 @@
 
     <ng-template #area>
         <textarea [(ngModel)]="resultado" class="textarea"></textarea>
+        <div class="frame6">
+            <button class="buttonClean" (click)="copy()">
+                <div class="textClean">Copiar al portapapeles</div>
+            </button>
+            <button class="buttonClean" (click)="clean()">
+                <div class="textClean">Limpiar</div>
+            </button>
+        </div>
     </ng-template>
 </div>

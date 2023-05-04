@@ -3,6 +3,8 @@
   position: absolute;
   width: 100%;
   height: 100%;
+  border: 0;
+  outline: none;
 }
 
 .textarea {
@@ -19,10 +21,11 @@
   /* identical to box height, or 48px */
   /* Dark blue/dark-blue-300 */
   color: #0A3871;
-  background-color: #ffffff;
+  background-color: #a4caf7;
   /*  Remove Resize Handler  */
   resize: none;
   border: none;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
 }
 
 textarea::placeholder {
@@ -37,10 +40,11 @@ textarea::placeholder {
   /* identical to box height, or 48px */
   /* Dark blue/dark-blue-300 */
   color: #0A3871;
+  
 }
 
 textarea.textarea {
-  background-color: #95bff2;
+  background-color: #d8e8fe;
 }
 
 .frame1 {
@@ -86,7 +90,7 @@ textarea.textarea {
   /* Solo letras minúsculas y sin acentos */
   width: 205px;
   height: 18px;
-  font-family: 'Inter';
+  font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
