@@ -22,6 +22,9 @@ import { CommonModule } from '@angular/common';
 export type caracteresConvertidor = {
   [key in string]: string;
 };
+export type caracteresLongitud = {
+  [key in string]: number;
+};
 @Component({
   selector: 'compilador',
   templateUrl: './compilador.component.html',
@@ -44,7 +47,7 @@ export class Compiladorcomponent implements OnInit {
     private fb: UntypedFormBuilder,
     private confirmationService: ConfirmationService,
     private messageService: MessageService
-  ) {}
+  ) { }
 
   form: UntypedFormGroup = this.fb.group({
     texto: ['', [Validators.required]],
@@ -52,15 +55,23 @@ export class Compiladorcomponent implements OnInit {
   resultado: string = '';
   converciones: caracteresConvertidor = {
     e: 'enter',
-    i: 'imes',
+    i: 'imes', //DICCIONARIO ORIGINAL
     a: 'ai',
     o: 'ober',
     u: 'ufat',
   };
 
-  ngOnInit(): void {}
+  longitudCaracter: caracteresLongitud = {
+    e: 5,
+    i: 4, //DICCIONARIO RELACION CARACTER/LONGITUD (REFERENCIA DESENCRIPTAR)
+    a: 2,
+    o: 4,
+    u: 4
+  }
 
-  validaciones() {
+  ngOnInit(): void { }
+
+  validaciones(tipoAccion: number) {
     //comprobación de que el usuario ingreso texto
     if (this.form.get('texto')?.value === '')
       return this.messageService.add({
@@ -77,7 +88,8 @@ export class Compiladorcomponent implements OnInit {
       });
     //Debe funcionar solo con letras minúsculas
     let minuscula = removerAcentos(this.form.get('texto')?.value.toLowerCase());
-    this.encriptar(minuscula);
+    //1 significa que se desea encriptar y 2 desencriptar
+    tipoAccion === 1 ? this.encriptar(minuscula) : this.desencriptar(minuscula);
   }
 
   onlyLettersAndNumbers(str: string): boolean {
@@ -100,7 +112,35 @@ export class Compiladorcomponent implements OnInit {
     this.resultado = arrayEncriptado;
   }
 
-  cleanEvent(evento:boolean){
+  desencriptar(stringValido: string) {
+    this.resultado = '';
+    //AL DICCIONARIO DE DATOS LO CONVERTIMOS 
+    const flip = (data: any) => Object.fromEntries(
+      Object
+        .entries(data)
+        .map(([key, value]) => [value, key])
+    );
+    // CREAMOS COPIA DEL DICCIONARIO ORIGINAL
+    const copiaDiccionario = flip(this.converciones);
+    let arrayDesencriptado: string = '';
+    let concatenador: string = '';
+    let caracterEncontrado: string = '';
+    [...stringValido].forEach((caracter) => {
+      //Ingreso el un caracter del diccionario original y TODAVIA no se encuentra alguno anteriormente
+      (this.converciones[caracter] && caracterEncontrado === '') && (caracterEncontrado = caracter);
+      // si no se encuentra un caracter simplemente se almacena al resultado pero si se encuentra 
+      //se comienza a concatenar
+      caracterEncontrado !== '' ? (concatenador = concatenador + caracter) : arrayDesencriptado = arrayDesencriptado + caracter;
+      if (this.longitudCaracter[caracterEncontrado] === concatenador.length) {
+        //cuando la longitud del caracter sea igual a la que corresponde en el diccionario
+        arrayDesencriptado = arrayDesencriptado + (copiaDiccionario[concatenador] ?? caracter);
+        concatenador = '';//limpiamos residuo de caracteres anteriores
+        caracterEncontrado = '';
+      }
+    });
+    this.resultado = arrayDesencriptado;
+  }
+  cleanEvent(evento: boolean) {
     evento && (this.form.get('texto')?.setValue(''));
   }
 }
