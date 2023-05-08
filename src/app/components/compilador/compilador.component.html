@@ -6,9 +6,11 @@
   </div>
 
   <div [formGroup]="form">
-    <textarea formControlName="texto" class="textarea" placeholder="Ingrese el texto aqui"></textarea>
+    <textarea formControlName="texto" class="textarea" placeholder="Ingrese un mensaje"></textarea>
     <show-result [resultado]="resultado" (cleanEvent)="cleanEvent($event)"></show-result>
   </div>
+
+  <historial [historial]="historial" (textoEvent)="textoEvent($event)"></historial>
 
   <div class="frame1">
     <div class="espacio">

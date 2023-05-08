@@ -18,6 +18,7 @@ import { removerAcentos } from 'src/app/utils/quitarAcentos';
 import { ShowResultComponent } from '../show-result/show-result.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { HistorialComponent } from '../historial/historial.component';
 
 export type caracteresConvertidor = {
   [key in string]: string;
@@ -33,6 +34,7 @@ export type caracteresLongitud = {
     FormsModule,
     ReactiveFormsModule,
     ShowResultComponent,
+    HistorialComponent,
     CommonModule,
     BrowserModule,
     ConfirmPopupModule,
@@ -53,6 +55,7 @@ export class Compiladorcomponent implements OnInit {
     texto: ['', [Validators.required]],
   });
   resultado: string = '';
+  historial: objetoHistorial[] = [];
   converciones: caracteresConvertidor = {
     e: 'enter',
     i: 'imes', //DICCIONARIO ORIGINAL
@@ -69,7 +72,11 @@ export class Compiladorcomponent implements OnInit {
     u: 4
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    //se obtiene los resultados anteriores para sumarle el nuevo
+    (sessionStorage.getItem('historial')) && 
+    (this.historial = JSON.parse(sessionStorage.getItem('historial') ?? ''));
+  }
 
   validaciones(tipoAccion: number) {
     //comprobación de que el usuario ingreso texto
@@ -77,7 +84,7 @@ export class Compiladorcomponent implements OnInit {
       return this.messageService.add({
         severity: 'warn',
         summary: '¡Advertencia!',
-        detail: 'Por favor escriba un texto para encriptarlo.',
+        detail: 'Por favor escriba algún texto.',
       });
 
     if (!this.onlyLettersAndNumbers(this.form.get('texto')?.value))
@@ -110,6 +117,22 @@ export class Compiladorcomponent implements OnInit {
         arrayEncriptado + (this.converciones[caracter] ?? caracter);
     });
     this.resultado = arrayEncriptado;
+    this.addHistorial(stringValido);
+  }
+
+  addHistorial(texto: string) {
+    //se revisa si el mensaje ya existe en el arreglo para no volver a almacenarlo
+    if (this.historial.find(a => a.texto === texto)) return this.messageService.add({
+      severity: 'warn',
+      summary: '¡Advertencia!',
+      detail: 'Texto ingresado anteriormente.',
+    });
+    //Se agrega el resultado al session Storage
+    const objetoHistorial: objetoHistorial = {
+      texto: texto
+    }
+    this.historial.push(objetoHistorial);
+    sessionStorage.setItem('historial', JSON.stringify(this.historial));
   }
 
   desencriptar(stringValido: string) {
@@ -143,4 +166,10 @@ export class Compiladorcomponent implements OnInit {
   cleanEvent(evento: boolean) {
     evento && (this.form.get('texto')?.setValue(''));
   }
+  textoEvent(event: string) {
+    this.form.get('texto')?.setValue(event);
+  }
+}
+export interface objetoHistorial {
+  texto: string;
 }
