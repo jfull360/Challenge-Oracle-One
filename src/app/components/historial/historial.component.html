@@ -5,12 +5,11 @@
         </div>
     </div>
     <ng-template #show>
+        <div class="Message" style="margin-top: 1%;">Historial de mensajes encriptados</div>
         <div *ngFor="let texto of historial" class="reel">
-            <div class="reel">
-                <button (click)="enviarMensaje(texto.texto)" class="buttonMensaje">
-                    <div class="Message">{{texto.texto | pipeTexto}}</div>
-                </button>
-            </div>
+            <button (click)="enviarMensaje(texto.texto)" class="buttonMensaje">
+                <div class="Message">{{texto.texto | pipeTexto}}</div>
+            </button>
         </div>
     </ng-template>
 </div>
