@@ -82,6 +82,14 @@
     justify-content: center;
 }
 
+.reel button:hover{
+    background: #495057;
+    cursor: pointer;
+}
+.reel button:hover div{
+    color: white;
+}
+
 .buttonMensaje {
     display: flex;
     flex-direction: row;
