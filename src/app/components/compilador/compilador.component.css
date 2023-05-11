@@ -258,10 +258,24 @@ textarea.input{
   flex-grow: 1;
 }
 
+.buttonEncriptar:hover{
+  background: #495057;
+  cursor: pointer;
+} 
+.buttonDesencriptar:hover{
+  background: #495057;
+  cursor: pointer;
+}
+.buttonDesencriptar:hover div{
+  /* cuando el cursor este en padre buttonDesencriptar el texto del hijo
+  div debe cambiar de color */
+  color: #FFFFFF;;
+}
+
 .textoDesencriptar {
   /* Button */
-  width: 280px;
-  height: 19px;
+  width: 100%;
+  height: 100%;
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
