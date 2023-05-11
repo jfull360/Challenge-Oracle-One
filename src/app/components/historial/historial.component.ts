@@ -43,6 +43,5 @@ export class HistorialComponent implements OnInit {
   ngOnInit() {}
   enviarMensaje(texto: string) {
     this.textoEvent.emit(texto);
-    console.log(texto);
   }
 }

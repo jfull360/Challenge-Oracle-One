@@ -1,10 +1,25 @@
 .contenedor {
-  background: #E5E5E5;
-  position: absolute;
+  background: #e5e5e5;
   width: 100%;
   height: 100%;
   border: 0;
   outline: none;
+}
+
+@media (min-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+  .frame1 {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .textarea {
+    width: 300px;
+    height: 150px;
+  }
 }
 
 .textarea {
@@ -12,15 +27,12 @@
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
-  position: relative;
   width: 600px;
   height: 300px;
   border-radius: 2.5%;
-  left: 240px;
-  top: 100px;
   /* identical to box height, or 48px */
   /* Dark blue/dark-blue-300 */
-  color: #0A3871;
+  color: #0a3871;
   background-color: #a4caf7;
   /*  Remove Resize Handler  */
   resize: none;
@@ -38,15 +50,14 @@ textarea::placeholder {
   top: 40%;
   /* identical to box height, or 48px */
   /* Dark blue/dark-blue-300 */
-  color: #0A3871;
-  
+  color: #0a3871;
 }
 
 textarea.textarea {
   background-color: #d8e8fe;
 }
 
-textarea.input{
+textarea.input {
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -56,22 +67,7 @@ textarea.input{
   top: 40%;
   /* identical to box height, or 48px */
   /* Dark blue/dark-blue-300 */
-  color: #0A3871;
-}
-
-.frame1 {
-  /* Frame 1 */
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0px;
-  gap: 8px;
-  position: relative;
-  width: 229px;
-  height: 176px;
-  left: 240px;
-  top: 4%;
+  color: #0a3871;
 }
 
 .framei {
@@ -123,15 +119,18 @@ textarea.input{
   align-items: flex-start;
   padding: 0px;
   gap: 40px;
-  position: absolute;
   width: 120px;
   height: 48px;
+  position: relative;
+  /* position: absolute;
   left: 40px;
-  top: 40px;
+  top: 40px; */
 }
 
 .logoV {
   /* Logo */
+  margin-left: 5%;
+  margin-top: 5%;
   width: 40px;
   height: 40px;
   /* Inside auto layout */
@@ -150,7 +149,7 @@ textarea.input{
   top: 0%;
   bottom: 0%;
   /* Dark blue/dark-blue-300 */
-  background: #0A3871;
+  background: #0a3871;
 }
 
 .circle {
@@ -176,24 +175,92 @@ textarea.input{
   height: 16px;
   left: 0%;
   right: 0%;
-  top: calc(50% - 16px/2);
+  top: calc(50% - 16px / 2);
 
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
+.textArea-buttons {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+  position: relative;
+}
+
+.frame1 {
+  display: flex;
+  flex-direction: row;
+  width: 98vw;
+  height: 95vh;
+  padding: 5%;
+}
 
 .frame3 {
   /* Frame 3 */
   /* Auto layout */
+  position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   padding: 0px;
   gap: 24px;
-  position: relative;
   width: 680px;
   height: 67px;
-  left: 240px;
+}
+
+.frame3-1 {
+  /* Frame 1 */
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+  width: 229px;
+  height: 176px;
+}
+
+.frame4 {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.frame5 {
+  /* margin: 8%; */
+  margin-left: 15%;
+  position: relative;
+  bottom: 15%;
+}
+
+.frame6 {
+  position: absolute;
+  bottom: 1%;
+  width: 60%;
+  height: 20%;
+  margin-left: 1%;
+  /* White */
+  background: #d8dfe8;
+  /* shadow */
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  border-radius: 32px;
+  overflow-y: auto;
+}
+
+.frame6::-webkit-scrollbar-track {
+  padding: 2px 0;
+}
+
+.frame6::-webkit-scrollbar {
+  width: 10px;
+  height: 1px;
+}
+
+.frame6::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #0a3871;
 }
 
 .buttonEncriptar {
@@ -204,10 +271,11 @@ textarea.input{
   align-items: flex-start;
   padding: 24px;
   gap: 8px;
+  margin-right: 3%;
   width: 328px;
   height: 67px;
   /* Dark blue/dark-blue-300 */
-  background: #0A3871;
+  background: #0a3871;
   border-radius: 30px;
   border: none;
   /* Inside auto layout */
@@ -228,9 +296,9 @@ textarea.input{
   width: 328px;
   height: 67px;
   /* Light gray */
-  background: #D8DFE8;
+  background: #d8dfe8;
   /* Dark blue/dark-blue-300 */
-  border: 1px solid #0A3871;
+  border: 1px solid #0a3871;
   border-radius: 30px;
   border: none;
   /* Inside auto layout */
@@ -251,25 +319,25 @@ textarea.input{
   line-height: 19px;
   text-align: center;
   /* White */
-  color: #FFFFFF;
+  color: #ffffff;
   /* Inside auto layout */
   flex: none;
   order: 0;
   flex-grow: 1;
 }
 
-.buttonEncriptar:hover{
-  background: #495057;
-  cursor: pointer;
-} 
-.buttonDesencriptar:hover{
+.buttonEncriptar:hover {
   background: #495057;
   cursor: pointer;
 }
-.buttonDesencriptar:hover div{
+.buttonDesencriptar:hover {
+  background: #495057;
+  cursor: pointer;
+}
+.buttonDesencriptar:hover div {
   /* cuando el cursor este en padre buttonDesencriptar el texto del hijo
   div debe cambiar de color */
-  color: #FFFFFF;;
+  color: #ffffff;
 }
 
 .textoDesencriptar {
@@ -283,7 +351,7 @@ textarea.input{
   line-height: 19px;
   text-align: center;
   /* Dark blue/dark-blue-300 */
-  color: #0A3871;
+  color: #0a3871;
   /* Inside auto layout */
   flex: none;
   order: 0;
