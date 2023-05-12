@@ -1,28 +1,30 @@
 <div class="contenedor">
-  <div class="logo">
-    <img class="logoV" src="../../../assets/logo.png" />
-  </div>
+  <div>
+    <div class="logo">
+      <img class="logoV" src="/assets/logo.png" />
+    </div>
 
-  <div class="frame1">
-    <div class="textArea-buttons">
-      <div [formGroup]="form">
-        <textarea formControlName="texto" class="textarea" placeholder="Ingrese un mensaje"></textarea>
-      </div>
-      <div class="frame3">
-        <div class="frame3-1">
-          <div class="espacio">
-            <img class="espacio" src="../../../assets/bi_exclamation-circle-fill.png" />
-          </div>
-          <p class="textoFrame1">Solo letras minúsculas y sin acentos</p>
+    <div class="frame1">
+      <div class="textArea-buttons">
+        <div [formGroup]="form">
+          <textarea formControlName="texto" class="textarea" placeholder="Ingrese un mensaje"></textarea>
         </div>
+        <div class="frame3">
+          <div class="frame3-1">
+            <div class="espacio">
+              <img class="espacio" src="/assets/bi_exclamation-circle-fill.png" />
+            </div>
+            <p class="textoFrame1">Solo letras minúsculas y sin acentos</p>
+          </div>
 
-        <div class="frame4">
-          <button class="buttonEncriptar" (click)="validaciones(1)">
-            <div class="textoEncriptar">Encriptar</div>
-          </button>
-          <button class="buttonDesencriptar" (click)="validaciones(2)">
-            <div class="textoDesencriptar">Desencriptar</div>
-          </button>
+          <div class="frame4">
+            <button class="buttonEncriptar" (click)="validaciones(1)">
+              <div class="textoEncriptar">Encriptar</div>
+            </button>
+            <button class="buttonDesencriptar" (click)="validaciones(2)">
+              <div class="textoDesencriptar">Desencriptar</div>
+            </button>
+          </div>
         </div>
       </div>
     </div>

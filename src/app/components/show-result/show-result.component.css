@@ -164,3 +164,9 @@
   order: 0;
   flex-grow: 1;
 }
+
+@media only screen and (max-width: 600px) {
+  .muñeco {
+    display: none;
+  }
+}

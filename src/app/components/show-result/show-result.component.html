@@ -1,21 +1,23 @@
 <div class="formaTextArea">
-    <div *ngIf="resultado === ''; else area">
-        <img class="muñeco" src="../../../assets/Muñeco.png" />
-        <div class="frame5">
-            <p class="emptyMessage">Ningún mensaje fue encontrado</p>
-            <p class="emptyMessage2">Ingresa el texto que desees encriptar o desencriptar.</p>
-        </div>
+  <div *ngIf="resultado === ''; else area">
+    <img class="muñeco" src="/assets/Muñeco.png" />
+    <div class="frame5">
+      <p class="emptyMessage">Ningún mensaje fue encontrado</p>
+      <p class="emptyMessage2">
+        Ingresa el texto que desees encriptar o desencriptar.
+      </p>
     </div>
+  </div>
 
-    <ng-template #area>
-        <textarea [(ngModel)]="resultado" class="textarea" disabled="true"></textarea>
-        <div class="frame6">
-            <button class="buttonClean" (click)="copy()">
-                <div class="textClean">Copiar al portapapeles</div>
-            </button>
-            <button class="buttonClean" (click)="clean()">
-                <div class="textClean">Limpiar</div>
-            </button>
-        </div>
-    </ng-template>
+  <ng-template #area>
+    <textarea [(ngModel)]="resultado" class="textarea" disabled="true"></textarea>
+    <div class="frame6">
+      <button class="buttonClean" (click)="copy()">
+        <div class="textClean">Copiar al portapapeles</div>
+      </button>
+      <button class="buttonClean" (click)="clean()">
+        <div class="textClean">Limpiar</div>
+      </button>
+    </div>
+  </ng-template>
 </div>
