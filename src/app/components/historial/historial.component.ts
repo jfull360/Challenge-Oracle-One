@@ -6,7 +6,7 @@ import {
   OnInit,
   Output,
   Pipe,
-  PipeTransform,
+  PipeTransform
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,14 +14,14 @@ import { Clipboard } from '@angular/cdk/clipboard';
 import { objetoHistorial } from '../compilador/compilador.component';
 @Pipe({
   name: 'pipeTexto',
-  standalone: true,
+  standalone: true
 })
 export class PipeTexto implements PipeTransform {
   transform(texto: string): string {
     // si el texto sobrepasa los 35 caracteres solo presentaremos esos 10 caracteres
     //y evitar deformar el template
     if (texto.length >= 35) {
-      return texto.substring(0, 35) + ' ...';
+      return texto.substring(0, 27) + ' ...';
     } else {
       return texto;
     }
@@ -32,7 +32,7 @@ export class PipeTexto implements PipeTransform {
   templateUrl: './historial.component.html',
   styleUrls: ['./historial.component.css'],
   standalone: true,
-  imports: [FormsModule, CommonModule, BrowserModule, PipeTexto],
+  imports: [FormsModule, CommonModule, BrowserModule, PipeTexto]
 })
 export class HistorialComponent implements OnInit {
   @Input() historial: objetoHistorial[] = [];

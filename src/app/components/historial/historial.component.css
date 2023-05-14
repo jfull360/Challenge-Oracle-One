@@ -1,3 +1,14 @@
+.historialContenedor {
+  position: absolute;
+  width: 800px;
+  height: 250px;
+  /* White */
+  background: #ffffff;
+  /* shadow */
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  border-radius: 32px;
+}
+
 .emptyMessage {
   /* Ningún mensaje fue encontrado */
   width: 336px;
@@ -54,12 +65,24 @@
   justify-content: center;
 }
 
-.buttonMensaje {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 24px;
-  color: white;
+.scroll {
+  overflow-y: auto;
+  width: auto;
+  height: 60%;
+}
+.scroll::-webkit-scrollbar-track {
+  padding: 2px 0;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 10px;
+  height: 1px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #0a3871;
 }
 
 .buttonMensaje {
@@ -76,4 +99,27 @@
   flex-grow: 0;
   border-radius: 30px;
   border: none;
+}
+.buttonMensaje:hover {
+  background: #495057;
+  cursor: pointer;
+}
+.buttonMensaje:hover .Message {
+  color: #ffffff;
+}
+
+@media only screen and (max-width: 600px) {
+  .historialContenedor {
+    position: absolute;
+    width: 95%;
+    height: 500px;
+    left: 10%;
+  }
+  .scroll {
+    height: 30%;
+  }
+  .Message {
+    font-weight: 0;
+    font-size: 18px;
+  }
 }

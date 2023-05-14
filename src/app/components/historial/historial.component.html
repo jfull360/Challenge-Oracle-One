@@ -1,13 +1,17 @@
-<div *ngIf="!historial.length ; else show">
-    <div class="frame5">
-        <p class="emptyMessage">Sin mensajes encriptados ...</p>
+<div class="historialContenedor">
+    <div *ngIf="!historial.length ; else show">
+        <div class="frame5">
+            <p class="emptyMessage">Sin mensajes encriptados ...</p>
+        </div>
     </div>
+    <ng-template #show>
+        <div class="Message" style="margin-top: 2%;">Historial de mensajes encriptados</div>
+        <div class="scroll">
+            <div *ngFor="let texto of historial" class="reel">
+                <button (click)="enviarMensaje(texto.texto)" class="buttonMensaje">
+                    <div class="Message">{{texto.texto | pipeTexto}}</div>
+                </button>
+            </div>
+        </div>
+    </ng-template>
 </div>
-<ng-template #show>
-    <div class="Message" style="margin-top: 1%;">Historial de mensajes encriptados</div>
-    <div *ngFor="let texto of historial" class="reel">
-        <button (click)="enviarMensaje(texto.texto)" class="buttonMensaje">
-            <div class="Message">{{texto.texto | pipeTexto}}</div>
-        </button>
-    </div>
-</ng-template>
