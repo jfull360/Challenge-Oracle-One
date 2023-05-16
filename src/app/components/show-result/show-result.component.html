@@ -1,4 +1,4 @@
-<div class="formaTextArea">
+<div [class]="resultado === '' ? 'formaTextArea':'formaTextAreaResultado'">
   <div *ngIf="resultado === ''; else area">
     <img class="muñeco" src="/assets/Muñeco.png" />
     <div class="frame5">

@@ -31,13 +31,11 @@
       </div>
     </div>
 
-    <div class="frame5">
-      <show-result [resultado]="resultado" (cleanEvent)="cleanEvent($event)"></show-result>
-    </div>
+    <show-result class="frame5" [resultado]="resultado" (cleanEvent)="cleanEvent($event)"></show-result>
+
   </main>
 
-  <div class="frame6">
-    <historial [historial]="historial" (textoEvent)="textoEvent($event)"></historial>
-  </div>
+  <historial class="frame6" [historial]="historial" (textoEvent)="textoEvent($event)"></historial>
+
 </div>
 <p-toast></p-toast>

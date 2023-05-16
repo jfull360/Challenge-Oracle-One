@@ -6,23 +6,20 @@
   /* shadow */
   box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
   border-radius: 32px;
+  margin-bottom: 10%;
 }
 
 .emptyMessage {
-  /* Ningún mensaje fue encontrado */
   width: 336px;
   height: 58px;
-
-  /* Gray/gray-500 */
   font-weight: bold;
   color: #343a40;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
+  text-align: center;
+  width: 336px;
+  height: 58px;
+  font-weight: bold;
+  color: #343a40;
+  text-align: center;
 }
 
 .Message {
@@ -100,6 +97,7 @@
     width: 66%;
     height: 200px;
     margin-left: 2%;
+    margin-bottom: 0%;
   }
   .frame5 {
     display: flex;

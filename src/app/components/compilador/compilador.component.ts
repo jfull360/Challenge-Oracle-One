@@ -49,7 +49,7 @@ export class Compiladorcomponent implements OnInit {
     private fb: UntypedFormBuilder,
     private confirmationService: ConfirmationService,
     private messageService: MessageService
-  ) { }
+  ) {}
 
   form: UntypedFormGroup = this.fb.group({
     texto: ['', [Validators.required]],
@@ -69,13 +69,13 @@ export class Compiladorcomponent implements OnInit {
     i: 4, //DICCIONARIO RELACION CARACTER/LONGITUD (REFERENCIA DESENCRIPTAR)
     a: 2,
     o: 4,
-    u: 4
-  }
+    u: 4,
+  };
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     //se obtiene los resultados anteriores para sumarle el nuevo
-    (sessionStorage.getItem('historial')) && 
-    (this.historial = JSON.parse(sessionStorage.getItem('historial') ?? ''));
+    sessionStorage.getItem('historial') &&
+      (this.historial = JSON.parse(sessionStorage.getItem('historial') ?? ''));
   }
 
   validaciones(tipoAccion: number) {
@@ -122,49 +122,66 @@ export class Compiladorcomponent implements OnInit {
 
   addHistorial(texto: string) {
     //se revisa si el mensaje ya existe en el arreglo para no volver a almacenarlo
-    if (this.historial.find(a => a.texto === texto)) return this.messageService.add({
-      severity: 'warn',
-      summary: '¡Advertencia!',
-      detail: 'Texto ingresado anteriormente.',
-    });
+    if (this.historial.find((a) => a.texto === texto))
+      return this.messageService.add({
+        severity: 'warn',
+        summary: '¡Advertencia!',
+        detail: 'Texto ingresado anteriormente.',
+      });
     //Se agrega el resultado al session Storage
     const objetoHistorial: objetoHistorial = {
-      texto: texto
-    }
+      texto: texto,
+    };
     this.historial.push(objetoHistorial);
     sessionStorage.setItem('historial', JSON.stringify(this.historial));
   }
 
   desencriptar(stringValido: string) {
     this.resultado = '';
-    //AL DICCIONARIO DE DATOS LO CONVERTIMOS 
-    const flip = (data: any) => Object.fromEntries(
-      Object
-        .entries(data)
-        .map(([key, value]) => [value, key])
-    );
+    //AL DICCIONARIO DE DATOS LO CONVERTIMOS
+    const flip = (data: any) =>
+      Object.fromEntries(
+        Object.entries(data).map(([key, value]) => [value, key])
+      );
     // CREAMOS COPIA DEL DICCIONARIO ORIGINAL
     const copiaDiccionario = flip(this.converciones);
     let arrayDesencriptado: string = '';
     let concatenador: string = '';
     let caracterEncontrado: string = '';
-    [...stringValido].forEach((caracter) => {
+    let palabraBuscar: string = '';
+    [...stringValido].forEach((caracter, index) => {
       //Ingreso el un caracter del diccionario original y TODAVIA no se encuentra alguno anteriormente
-      (this.converciones[caracter] && caracterEncontrado === '') && (caracterEncontrado = caracter);
-      // si no se encuentra un caracter simplemente se almacena al resultado pero si se encuentra 
+      this.converciones[caracter] &&
+        caracterEncontrado === '' &&
+        ((caracterEncontrado = caracter),
+        (palabraBuscar = this.converciones[caracter]));
+      // si no se encuentra un caracter simplemente se almacena al resultado pero si se encuentra
       //se comienza a concatenar
-      caracterEncontrado !== '' ? (concatenador = concatenador + caracter) : arrayDesencriptado = arrayDesencriptado + caracter;
+      caracterEncontrado !== ''
+        ? (concatenador = concatenador + caracter)
+        : (arrayDesencriptado = arrayDesencriptado + caracter);
+
       if (this.longitudCaracter[caracterEncontrado] === concatenador.length) {
         //cuando la longitud del caracter sea igual a la que corresponde en el diccionario
-        arrayDesencriptado = arrayDesencriptado + (copiaDiccionario[concatenador] ?? caracter);
-        concatenador = '';//limpiamos residuo de caracteres anteriores
+        //En vez de almacenar el caracter actual debe almacenar todo el concatenador que se probó
+        arrayDesencriptado =
+          arrayDesencriptado + (copiaDiccionario[concatenador] ?? concatenador);
+        concatenador = ''; //limpiamos residuo de caracteres anteriores
         caracterEncontrado = '';
+        palabraBuscar = '';
+      } else if (palabraBuscar.length > stringValido.length - index) {
+        //si no se cumple la condición y la longitud del mensaje restante es menor a la palabra encriptada
+        //simplemente se almacena el caracter
+        arrayDesencriptado = arrayDesencriptado + concatenador;
+        concatenador = ''; //limpiamos residuo de caracteres anteriores
+        caracterEncontrado = '';
+        palabraBuscar = '';
       }
     });
     this.resultado = arrayDesencriptado;
   }
   cleanEvent(evento: boolean) {
-    evento && (this.form.get('texto')?.setValue(''));
+    evento && this.form.get('texto')?.setValue('');
   }
   textoEvent(event: string) {
     this.form.get('texto')?.setValue(event);

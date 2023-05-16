@@ -16,7 +16,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
-  height: 150px;
+  height: 50vh;
   width: 98%;
   border-radius: 2.5%;
   /* identical to box height, or 48px */
@@ -130,7 +130,8 @@ textarea.input {
   flex-direction: row;
   width: auto;
   height: auto;
-  padding: 5%;
+  align-items: center;
+  justify-content: center;
 }
 
 .frame3 {
@@ -163,13 +164,15 @@ textarea.input {
 }
 
 .frame5 {
+  margin-top: 5%;
+  display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .frame6 {
+  margin-top: 5%;
+  display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .buttonEncriptar {
@@ -281,7 +284,8 @@ textarea.input {
     width: 600px;
   }
   .frame1 {
-    margin-top: 5%;
+    margin-top: 10%;
+    margin-left: 10%;
   }
   .frame4 {
     flex-direction: row;
@@ -291,7 +295,7 @@ textarea.input {
     margin-left: 33%;
   }
   .frame6 {
-    margin-bottom: 2%;
+    display: contents;
   }
   .buttonEncriptar {
     margin-right: 5%;

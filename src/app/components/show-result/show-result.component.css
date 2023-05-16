@@ -1,7 +1,17 @@
 .formaTextArea {
   /* Rectangle 1 */
-  /* width: 400px;
-  height: 700px; */
+  width: 90%;
+  height: auto;
+  padding: 5%;
+  /* White */
+  background: #ffffff;
+  /* shadow */
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  border-radius: 32px;
+}
+
+.formaTextAreaResultado {
+  /* Rectangle 1 */
   width: 90%;
   height: auto;
   padding: 5%;
@@ -29,6 +39,7 @@
   /*  Remove Resize Handler  */
   resize: none;
   border: none;
+  margin-bottom: 5%;
 }
 
 .muñeco {
@@ -45,21 +56,19 @@
 }
 
 .emptyMessage {
-  /* Ningún mensaje fue encontrado */
+  width: 336px;
   height: auto;
-  font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: bold;
-  /* or 29px */
+  font-size: 16px;
+  line-height: 150%;
   text-align: center;
-  /* Gray/gray-500 */
-  color: #343a40;
-  justify-content: center;
-  align-items: center;
-  justify-items: center;
-  display: block;
-  /* Inside auto layout */
+  color: #495057;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
 }
 
 .emptyMessage2 {
@@ -108,7 +117,7 @@
   /* Light gray */
   /* background: #D8DFE8; */
   /* Dark blue/dark-blue-300 */
-  border: 1px solid #0a3871;
+  border: none;
   border-radius: 30px;
   /* Inside auto layout */
   flex: none;
@@ -148,6 +157,15 @@
     height: 135%;
     width: 80%;
   }
+  .formaTextAreaResultado {
+    height: 135%;
+    width: 100%;
+    padding: 5%;
+    margin-left: 25%;
+    background: #ffffff;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+  }
   .muñeco {
     display: block;
     width: 100%;
@@ -163,6 +181,7 @@
     height: 60px;
   }
   .textarea {
-    height: 300px;
+    height: 440px;
+    width: 100%;
   }
 }
