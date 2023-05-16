@@ -1,7 +1,6 @@
 .historialContenedor {
-  position: absolute;
-  width: 800px;
-  height: 250px;
+  width: 90%;
+  height: 300px;
   /* White */
   background: #ffffff;
   /* shadow */
@@ -14,17 +13,8 @@
   width: 336px;
   height: 58px;
 
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 120%;
-  /* or 29px */
-
-  text-align: center;
-
   /* Gray/gray-500 */
-
+  font-weight: bold;
   color: #343a40;
 
   /* Inside auto layout */
@@ -39,18 +29,14 @@
   /* mensaje de historial */
   width: 100%;
   height: 58px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 120%;
-  /* or 29px */
+  font-weight: bold;
   text-align: center;
   /* Gray/gray-500 */
   color: #343a40;
   /* Inside auto layout */
   flex: none;
   order: 0;
+  padding: 2%;
   align-self: stretch;
   flex-grow: 0;
 }
@@ -68,7 +54,7 @@
 .scroll {
   overflow-y: auto;
   width: auto;
-  height: 60%;
+  height: 75%;
 }
 .scroll::-webkit-scrollbar-track {
   padding: 2px 0;
@@ -108,18 +94,21 @@
   color: #ffffff;
 }
 
-@media only screen and (max-width: 600px) {
+/* DESKTOP */
+@media only screen and (min-width: 1281px) {
   .historialContenedor {
-    position: absolute;
-    width: 95%;
-    height: 500px;
-    left: 10%;
+    width: 66%;
+    height: 200px;
+    margin-left: 2%;
+  }
+  .frame5 {
+    display: flex;
+    justify-content: center;
   }
   .scroll {
-    height: 30%;
+    height: 65%;
   }
   .Message {
-    font-weight: 0;
     font-size: 18px;
   }
 }
