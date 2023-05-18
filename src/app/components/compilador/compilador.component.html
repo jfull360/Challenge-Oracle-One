@@ -4,11 +4,10 @@
       <div class="logo">
         <img class="logoV" src="/assets/logo.png" />
       </div>
-
       <div class="frame1">
         <div class="textArea-buttons">
           <div [formGroup]="form">
-            <textarea formControlName="texto" class="textarea" placeholder="Ingrese un mensaje"></textarea>
+            <textarea formControlName="texto" class="textarea" placeholder="Ingrese el texto aqui"></textarea>
           </div>
           <div class="frame3">
             <div class="frame3-1">
@@ -17,25 +16,20 @@
               </div>
               <p class="textoFrame1">Solo letras minúsculas y sin acentos</p>
             </div>
-
             <div class="frame4">
-              <button class="buttonEncriptar" (click)="validaciones(1)">
-                <div class="textoEncriptar">Encriptar</div>
+              <button class="btn btn-primary" (click)="validaciones(1)">
+                Encriptar
               </button>
-              <button class="buttonDesencriptar" (click)="validaciones(2)">
-                <div class="textoDesencriptar">Desencriptar</div>
+              <button class="btn btn-secondary" (click)="validaciones(2)">
+                Desencriptar
               </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-
     <show-result class="frame5" [resultado]="resultado" (cleanEvent)="cleanEvent($event)"></show-result>
-
   </main>
-
   <historial class="frame6" [historial]="historial" (textoEvent)="textoEvent($event)"></historial>
-
 </div>
 <p-toast></p-toast>

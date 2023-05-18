@@ -136,7 +136,6 @@ textarea.input {
 
 .frame3 {
   /* Frame 3 */
-  /* Auto layout */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -147,8 +146,7 @@ textarea.input {
 }
 
 .frame3-1 {
-  /* Frame 1 */
-  /* Auto layout */
+  /* Frame 3-1 */
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -161,6 +159,9 @@ textarea.input {
 .frame4 {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  gap: 24px;
+  margin-bottom: 24px;
 }
 
 .frame5 {
@@ -175,77 +176,36 @@ textarea.input {
   justify-content: center;
 }
 
-.buttonEncriptar {
-  /* Button */
-  /* Auto layout */
+.btn {
+  all: unset;
+  cursor: pointer;
+  flex: 1;
+  color: white;
+  border-radius: 24px;
+  height: 64px;
+  width: 100%;
+  max-width: 324px;
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 24px;
-  gap: 8px;
-  width: 95%;
-  height: 67px;
-  /* Dark blue/dark-blue-300 */
-  background: #0a3871;
-  border-radius: 30px;
-  border: none;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  margin-bottom: 5%;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+.btn-primary {
+  background-color: #0a3871;
 }
 
-.buttonDesencriptar {
-  /* Button */
-  box-sizing: border-box;
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 24px;
-  gap: 8px;
-  width: 95%;
-  height: 67px;
-  /* Light gray */
-  background: #d8dfe8;
-  /* Dark blue/dark-blue-300 */
+.btn-secondary {
+  color: #0a3871;
+  background-color: #d8dfe8;
   border: 1px solid #0a3871;
-  border-radius: 30px;
-  border: none;
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  flex-grow: 0;
 }
 
-.textoEncriptar {
-  /* Button */
-  width: 280px;
-  height: 19px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  text-align: center;
-  /* White */
-  color: #ffffff;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 1;
+.btn-primary:hover {
+  background-color: #495057;
 }
 
-.buttonEncriptar:hover {
+.btn-secondary:hover {
   background: #495057;
-  cursor: pointer;
-}
-
-.buttonDesencriptar:hover {
-  background: #495057;
-  cursor: pointer;
 }
 
 .buttonDesencriptar:hover div {
@@ -254,26 +214,50 @@ textarea.input {
   color: #ffffff;
 }
 
-.textoDesencriptar {
-  /* Button */
-  width: 100%;
-  height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  text-align: center;
-  /* Dark blue/dark-blue-300 */
-  color: #0a3871;
-  /* Inside auto layout */
-  flex: none;
-  order: 0;
-  flex-grow: 1;
+/* TABLET */
+@media only screen and (min-width: 768px) {
+  .main {
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0 4%;
+    height: auto;
+    max-width: 90%;
+  }
+  .textArea-buttons {
+    width: 100%;
+  }
+  .textarea {
+    max-width: 100%;
+  }
+  .frame1 {
+    margin-top: 5%;
+  }
+  .frame4 {
+    flex-direction: row;
+    max-width: 100%;
+    justify-content: center;
+  }
+  .frame5 {
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  .frame6 {
+    width: 100%;
+    justify-content: center;
+    margin-left: 0%;
+  }
+  .buttonEncriptar {
+    flex: 1;
+  }
+  .buttonDesencriptar {
+    flex: 1;
+    width: 100%;
+  }
 }
 
 /* DESKTOP */
-@media only screen and (min-width: 1281px) {
+@media only screen and (min-width: 1200px) {
   .main {
     flex-direction: row;
     margin-bottom: 0%;

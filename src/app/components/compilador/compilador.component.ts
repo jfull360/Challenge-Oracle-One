@@ -181,7 +181,10 @@ export class Compiladorcomponent implements OnInit {
     this.resultado = arrayDesencriptado;
   }
   cleanEvent(evento: boolean) {
-    evento && this.form.get('texto')?.setValue('');
+    if (evento) {
+      this.form.get('texto')?.setValue('');
+      this.resultado = '';
+    }
   }
   textoEvent(event: string) {
     this.form.get('texto')?.setValue(event);
