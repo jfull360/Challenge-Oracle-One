@@ -179,7 +179,7 @@ textarea.input {
 .btn {
   all: unset;
   cursor: pointer;
-  flex: 1;
+  /*   flex: 1; */
   color: white;
   border-radius: 24px;
   height: 64px;
